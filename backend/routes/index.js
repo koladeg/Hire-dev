@@ -44,7 +44,7 @@ router.post('/userdata', isAuth,(req, res) => {
 // });
 
 router.get('/getuserdata', isAuth, (req, res) => {
-  console.log('called');
+  console.log('called',req.user, "orange");
   User.findById(req.user._id)
   .then(user => res.json({user}))
   .catch(error => res.json({error}));
